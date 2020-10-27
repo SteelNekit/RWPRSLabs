@@ -1,0 +1,18 @@
+<!ELEMENT employee EMPTY>
+<!ELEMENT article EMPTY>
+<!ELEMENT employees (employee*)>
+<!ELEMENT articles (article*)>
+<!ELEMENT sector (employees)>
+<!ELEMENT sectors (sector*)>
+<!ELEMENT shop (sectors,articles)>
+
+<!ATTLIST employee
+        name CDATA #REQUIRED
+        specialization CDATA #REQUIRED
+        daysold CDATA #REQUIRED>
+<!ATTLIST article
+        title CDATA #REQUIRED
+        cost CDATA #REQUIRED
+        description CDATA #REQUIRED>
+<!ATTLIST sector
+        number CDATA #REQUIRED>

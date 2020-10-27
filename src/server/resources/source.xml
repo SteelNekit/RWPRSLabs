@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE shop SYSTEM "dtd_example.dtd">
+<shop>
+    <sectors>
+        <sector number="1">
+                <employees>
+                        <employee name="Ivan" specialization="FRIDGE" daysold="5"/>
+                </employees>
+        </sector>
+        <sector number="4">
+                <employees>
+                    <employee name="Maksim" specialization="WASHING MACHINE" daysold="4"/>
+                </employees>
+        </sector>
+        <sector number="2">
+                <employees>
+                    <employee name="Vovan" specialization="TV" daysold="3"/>
+                    <employee name="Anton" specialization="TV" daysold="7"/>
+                </employees>
+        </sector>
+        <sector number="3">
+                <employees>
+                    <employee name="Lexa" specialization="BLENDER" daysold="7"/>
+                </employees>
+        </sector>
+    </sectors>
+    <articles>
+        <article title="0" cost="50" description="DESCRIPTION #0"/>
+        <article title="1" cost="100" description="DESCRIPTION #1"/>
+        <article title="2" cost="200" description="DESCRIPTION #2"/>
+        <article title="3" cost="300" description="DESCRIPTION #3"/>
+        <article title="4" cost="400" description="DESCRIPTION #4"/>
+        <article title="5" cost="500" description="DESCRIPTION #5"/>
+        <article title="6" cost="600" description="DESCRIPTION #6"/>
+        <article title="7" cost="700" description="DESCRIPTION #7"/>
+    </articles>
+</shop>
