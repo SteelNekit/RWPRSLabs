@@ -8,4 +8,5 @@ public interface Shop extends Remote {
     Employee GetMostCoolEmployee() throws RemoteException;
     double AverageSoldedItems() throws RemoteException;
     void inFile() throws IOException, RemoteException;
+    boolean isAlive()throws RemoteException;
 }

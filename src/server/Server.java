@@ -15,9 +15,6 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class Server {
     public static void main(String[] args) throws NamingException, IOException, SAXException, ParserConfigurationException {
-        if(System.getSecurityManager() == null){
-            System.setSecurityManager(new SecurityManager());
-        }
         Shop shop = new ShopImpl();
         try{
             Shop stub = (Shop) UnicastRemoteObject.exportObject(shop,0);

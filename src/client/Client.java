@@ -8,13 +8,24 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 public class Client {
-    public static void main(String[] args) throws RemoteException, NotBoundException {
-        if(System.getSecurityManager() == null){
-            System.setSecurityManager(new SecurityManager());
+    public static void main(String[] args) throws RemoteException {
+        Shop shop = setConnection("localhost", "myShop");
+        if (shop == null) {
+            System.out.println("Server down");
+        } else {
+            System.out.println("Average solded items: " + shop.AverageSoldedItems());
         }
-        Registry registry = LocateRegistry.getRegistry("localhost");
-        Shop stub = (Shop) registry.lookup("myShop");
+    }
 
-        System.out.println("Average solded items: "+stub.AverageSoldedItems());
+    public static Shop setConnection(String url, String name) {
+        try {
+            Registry registry = LocateRegistry.getRegistry(url,1099);
+            Shop shop = (Shop) registry.lookup("myShop");
+            shop.isAlive();
+            return shop;
+        } catch (RemoteException | NotBoundException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

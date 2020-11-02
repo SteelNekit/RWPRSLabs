@@ -9,6 +9,7 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,5 +64,11 @@ public class ShopImpl implements Shop{
         writer.write(GetMostCoolEmployee().toString() + '\n');
         writer.write("В среднем за этот день продано: " + AverageSoldedItems() + " единиц товара");
         writer.close();
+    }
+
+    @Override
+    public boolean isAlive() throws RemoteException {
+        System.out.println("Оу, я чувствую чьё то давление");
+        return true;
     }
 }
